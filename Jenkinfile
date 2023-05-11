@@ -1,13 +1,18 @@
 pipeline {
-    agent {
-        label 'python'
-    }
-    stages {
-        stage('Run Python Script') {
-            steps {
+    agent any 
+        stages {
+        stage('version') {
+        steps{
+        sh 'python3 --version'
+        }
+     } 
+ 
+    stage('hello'){
+        
+          steps {
                 sh 'python3 unit_test.py'
             }
         }
     
     }
-    }
+ }
