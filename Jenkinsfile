@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Run Python code') {
       steps {
-        sh 'python3 unit_test.py'
+        sh 'python unit_test.py'
       }
     }
   }
