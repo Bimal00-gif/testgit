@@ -1,18 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage('Clone repository') {
-      steps {
-        git 'https://github.com/Bimal00-gif/testgit.git'
-      }
+    agent { docker { image 'python:3.10.7-alpine' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
     }
-    
-    stage('Run Python code') {
-      steps {
-        sh 'python unit_test.py'
-      }
-    }
-  }
 }
-
- 
